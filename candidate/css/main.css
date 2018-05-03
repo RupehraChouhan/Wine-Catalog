@@ -3,5 +3,15 @@ html {
     font-family: Arial;
     font-size: 12px;
     color: #b4b4b4;
+
+    /*my addition*/
+    overflow: scroll;
 }
 /* TODO: Implement solution here */
+
+container {
+    width: 100%;
+    
+    background: aqua;
+    /*position:fixed;*/
+}
