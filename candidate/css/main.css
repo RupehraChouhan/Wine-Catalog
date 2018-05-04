@@ -6,6 +6,7 @@ html {
 
     /*my addition*/
     overflow: scroll;
+    min-height: 1000px;
 }
 /* TODO: Implement solution here */
 

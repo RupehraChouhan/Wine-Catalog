@@ -34,13 +34,13 @@ function CatalogItem(id, category, name, volume, price, country, producer) {
 
     /* TODO: Implement additional helpers here */
 
-    add_wineId_to_array(this.getId());
+    addWineIDtoArray(this.getId());
 
 }
 
 var all_wine_ids = [];
 
-function add_wineId_to_array(id) {
+function addWineIDtoArray(id) {
     all_wine_ids.push(id);
 }
 

@@ -1,17 +1,20 @@
 /* TODO: Implement solution here */
 
 .panel.left {
-	width: 10%;
+	width: 12%;
 	float: left;
 	background-color: #5D5E57;
+	min-height: 1000px;
 }
 
 .panel.left .top {
-	height: 10%;
+	/*height: 10%;*/
+    min-height: 150px;
 }
 
 .panel.left .bottom {
-	height: 90%;
+	/*height: 90%; */
+	min-height: 850px;
 }
 
 .panel.left .top .logoCircle {
@@ -52,5 +55,19 @@ input {
 	width: -webkit-fill-available;
 }
 
+select {
+    width: -webkit-fill-available;
+}
 
+.panel.left .bottom .bottomText li {
+}
+
+.panel.left .bottom .bottomText a {
+    color: white;
+    text-decoration: none;
+}
+
+.panel.left .bottom .bottomText li:hover {
+    background-color: #42B7C8;
+}
 

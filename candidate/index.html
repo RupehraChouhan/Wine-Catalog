@@ -46,33 +46,45 @@
                 <div class="bottom">
                     <div class="bottomText">
                         <h2>SEARCH</h2>
-                        <input type="text">
+                        <input type="text" id="search" onkeyup="searchByName()" placeholder="Start typing a wine name...">
+
                         <h2>SORT BY</h2>
+                        <select>
+                            <option>Name</option>
+                            <option>Name</option>
+                            <option>Category</option>
+                            <option>Category</option>
+                            <option>Volume</option>
+                            <option>Volume</option>
+                            <option>Price</option>
+                            <option>Price</option>
+                            <option>Country</option>
+                            <option>Country</option>
+                            <option>Producer</option>
+                            <option>Producer</option>
+                        </select>
 
                         <h2>CATEGORY</h2>
                         <ul>
-                            <li>All</li>
-                            <li>Red Wine</li>
-                            <li>White Wine</li>
-                            <li>Rose Wine</li>
-                            <li>Champagne</li>
-                            <li>Sparkling Wine</li>
-                            <li>Dessert Wine</li>
-                            <li>Icewine</li>
-                            <li>Fortified Wines</li>
-                            <li>Specialty Wines</li>
+                            <li onclick="filterWineByCategory(this)" value="ALL"><a href="#">All</a></li>
+                            <li onclick="filterWineByCategory(this)" value="RED"><a href="#">Red Wine</a></li>
+                            <li onclick="filterWineByCategory(this)" value="WHITE"><a href="#">White Wine</a></li>
+                            <li onclick="filterWineByCategory(this)" value="ROSE"><a href="#">Rosé Wine</a></li>
+                            <li onclick="filterWineByCategory(this)" value="CHAMPAGNE"><a href="#">Champagne</a></li>
+                            <li onclick="filterWineByCategory(this)" value="SPARKLING"><a href="#">Sparkling Wine</a></li>
+                            <li onclick="filterWineByCategory(this)" value="DESSERT"><a href="#">Dessert Wine</a></li>
+                            <li onclick="filterWineByCategory(this)" value="ICEWINE"><a href="#">Icewine</a></li>
+                            <li onclick="filterWineByCategory(this)" value="FORTIFIED"><a href="#">Fortified Wines</a></li>
+                            <li onclick="filterWineByCategory(this)" value="SPECIALTY"><a href="#">Specialty Wines</a></li>
                         </ul>
-
                     </div>
 
                 </div>
             </div>
             <div class="panel center">
 
-
                 <ol id="allWines">
                 </ol>
-
 
             </div>
             <div class="panel right">
