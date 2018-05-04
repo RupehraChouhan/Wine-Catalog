@@ -9,6 +9,6 @@ html {
 }
 /* TODO: Implement solution here */
 
-container {
+.containerClass {
 	 display: flex;
 }

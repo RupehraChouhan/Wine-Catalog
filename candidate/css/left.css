@@ -8,13 +8,10 @@
 
 .panel.left .top {
 	height: 10%;
-	/*border-width: thin;
-    border-style: solid;*/
 }
 
 .panel.left .bottom {
 	height: 90%;
-	/*background-color: green;*/
 }
 
 .panel.left .top .logoCircle {
@@ -51,10 +48,9 @@
     margin-right: 15px;
 }
 
-ul li a {
- display:block;
+input {
+	width: -webkit-fill-available;
 }
 
-ul li a:hover, ul li a:focus {
- color:red;
-} 
+
+
