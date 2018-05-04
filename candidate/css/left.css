@@ -1,7 +1,60 @@
 /* TODO: Implement solution here */
 
 .panel.left {
-	width: 12%;
-	height: 1000px;
+	width: 10%;
 	float: left;
+	background-color: #5D5E57;
 }
+
+.panel.left .top {
+	height: 10%;
+	/*border-width: thin;
+    border-style: solid;*/
+}
+
+.panel.left .bottom {
+	height: 90%;
+	/*background-color: green;*/
+}
+
+.panel.left .top .logoCircle {
+    height: 54px;
+    width: 54px;
+    border-width: thin;
+    border-radius: 50%;
+    border-style: solid;
+    margin-right: 36%;
+    margin-left: 36%;
+    margin-top: 29px;
+    border-color: white;
+}
+
+.panel.left .logoImg {
+	height: 42px; 
+	padding: 6px;
+}
+
+.panel.left .logoText {
+	text-align: center;
+    margin-top: 10px;
+}
+
+.panel.left .logoText h1 {
+	line-height: 1.35;
+}
+
+.panel.left .bottom .bottomText {
+	color: white;
+	font-size: 12px;
+	line-height: 2;
+	margin-left: 15px;
+    margin-right: 15px;
+}
+
+ul li a {
+ display:block;
+}
+
+ul li a:hover, ul li a:focus {
+ color:red;
+} 

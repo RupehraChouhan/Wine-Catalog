@@ -1,6 +1,7 @@
 /* TODO: Implement solution here */
 
 .panel.right {
-	width: 12%;
-	float: right;
+	width: 14%;
+	float: left;
+	background-color: red;
 }

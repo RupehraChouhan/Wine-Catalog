@@ -10,8 +10,5 @@ html {
 /* TODO: Implement solution here */
 
 container {
-    width: 100%;
-    
-    background: aqua;
-    /*position:fixed;*/
+	 display: flex;
 }

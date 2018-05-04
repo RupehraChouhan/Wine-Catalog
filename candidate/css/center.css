@@ -2,7 +2,8 @@
 
 .panel.center {
 	color: red;
-    margin-left: 12%;*/
-    background-color: black;
-
+    float: left;
+    background-color: #262620;
+    width: 76%;
+    height: 100%;
 }
