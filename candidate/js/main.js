@@ -15,23 +15,33 @@ $(document).ready(function() {
 
     /* Initially display ALL the wines */
     filteredWines = allWineObjects;
-    displayWines();
+    searchByName();
+//    displayWines(filteredWines);
+
 
 });
 
 
-function displayWines() {
+function displayWines(filteredWines) {
 
     /* Clear all the previous wines that are displaying */
     document.getElementById("allWines").innerHTML = "";
 
+    console.log("filtered wines: " + filteredWines.length);
+
+    filteredWines = sortResult(filteredWines);
+
+
     /* Create list item <li> for each wine object and add it to <ol> tag*/
     for(i = 0; i < filteredWines.length; i++) {
         var wine = filteredWines[i];
+
+        var wineInfo = wine.getId() + " "+ wine.getCategory() + " " + wine.getName() + " " +
+         wine.getVolume() + " " + wine.getCountry() + " " + wine.getProducer() + " " + wine.getPrice();
+
         var listItem = document.createElement("LI");
         listItem.setAttribute("id", wine.getId());
-        var wineInfo = wine.getId() + " "+ wine.getCategory() + " " + wine.getName() + " " + wine.getPrice();
-        wineInfo += wine.getVolume() + " " + wine.getCountry() + " " + wine.getProducer();
+
         var node = document.createTextNode(wineInfo);
         listItem.append(node);
         document.getElementById("allWines").appendChild(listItem);
@@ -54,7 +64,8 @@ function filterWineByCategory(wineCategory) {
         }) ;
     }
 
-    displayWines();
+    //displayWines();
+    searchByName();
 
 }
 
@@ -62,31 +73,66 @@ function searchByName() {
     searchTextBox = document.getElementById("search");
     input = searchTextBox.value.toLowerCase();
 
+    console.log("input: " + input);
+
     var filterWinesByName = _.filter(filteredWines, function(wine) {
         return wine.getName().toLowerCase().indexOf(input) != -1;
     });
 
-    displayWinesAfterSearch(filterWinesByName);
+    //displayWinesAfterSearch(filterWinesByName);
 
+    var sortedResult = sortResult(filterWinesByName)
+
+//    displayWines(filterWinesByName);
+    displayWines(sortedResult);
 }
 
-function displayWinesAfterSearch(wines) {
+function sortResult(wines) {
 
-    console.log("wines to display: " + wines.length);
+    var selectBox = document.getElementById("selectBox");
+    var sortOption = selectBox.options[selectBox.selectedIndex].value;
 
-    /* Clear all the previous wines that are displaying */
-    document.getElementById("allWines").innerHTML = "";
+    var result = [];
 
-    /* Create list item <li> for each wine object and add it to <ol> tag*/
-    for(i = 0; i < wines.length; i++) {
-        var wine = wines[i];
-        var listItem = document.createElement("LI");
-        listItem.setAttribute("id", wine.getId());
-        var wineInfo = wine.getId() + " "+ wine.getCategory() + " " + wine.getName() + " " + wine.getPrice();
-        wineInfo += wine.getVolume() + " " + wine.getCountry() + " " + wine.getProducer();
-        var node = document.createTextNode(wineInfo);
-        listItem.append(node);
-        document.getElementById("allWines").appendChild(listItem);
+    if (sortOption.indexOf("name") != -1 ) {
+        result = _.sortBy(wines, function(wine) {
+            return wine.getName();
+        });
+    }
+    else if (sortOption.indexOf("category") != -1) {
+        result = _.sortBy(wines, function(wine) {
+            return wine.getCategory();
+        });
+    }
+    else if (sortOption.indexOf("volume") != -1) {
+        result = _.sortBy(wines, function(wine) {
+            return wine.getVolume();
+        });
+    }
+    else if (sortOption.indexOf("price") != -1) {
+         result = _.sortBy(wines, function(wine) {
+            return wine.getPrice();
+         });
+    }
+    else if (sortOption.indexOf("country") != -1) {
+        result = _.sortBy(wines, function(wine) {
+            return wine.getCountry();
+        });
+    }
+    else {
+        result = _.sortBy(wines, function(wine) {
+            return wine.getProducer();
+        });
     }
 
+    console.log("sortby: "+sortOption);
+
+    if (sortOption.indexOf("Dsc") != -1) {
+        console.log("dsc: " + result.length);
+
+        return result.reverse();
+    }
+    return result;
+
 }
+

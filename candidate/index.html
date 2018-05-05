@@ -49,19 +49,19 @@
                         <input type="text" id="search" onkeyup="searchByName()" placeholder="Start typing a wine name...">
 
                         <h2>SORT BY</h2>
-                        <select>
-                            <option>Name</option>
-                            <option>Name</option>
-                            <option>Category</option>
-                            <option>Category</option>
-                            <option>Volume</option>
-                            <option>Volume</option>
-                            <option>Price</option>
-                            <option>Price</option>
-                            <option>Country</option>
-                            <option>Country</option>
-                            <option>Producer</option>
-                            <option>Producer</option>
+                        <select id="selectBox" onchange="searchByName()">
+                            <option selected="selected" value="nameAsc">Name ↑</option>
+                            <option value="nameDsc">Name ↓</option>
+                            <option value="categoryAsc">Category ↑</option>
+                            <option value="categoryDsc">Category ↓</option>
+                            <option value="volumeAsc">Volume ↑</option>
+                            <option value="volumeDsc">Volume ↓</option>
+                            <option value="priceAsc">Price ↑</option>
+                            <option value="priceDsc">Price ↓</option>
+                            <option value="countryAsc">Country ↑</option>
+                            <option value="countryDsc">Country ↓</option>
+                            <option value="producerAsc">Producer ↑</option>
+                            <option value="producerDsc">Producer ↓</option>
                         </select>
 
                         <h2>CATEGORY</h2>
