@@ -170,7 +170,16 @@ function displayWines(filteredWines) {
         var card = document.createElement("div");
         card.setAttribute("class", "card");
         card.setAttribute("id", wine.getId());
-        card.innerHTML = wineInfo;
+        //card.innerHTML = wineInfo;
+
+        //create top portion of the card
+        var cardTop = document.createElement("div");
+        cardTop.setAttribute("class", "cardTop");
+
+        //create button
+
+        var btnOuterDiv = document.createElement("div");
+        btnOuterDiv.setAttribute("class", "cardPlusButton");
 
         var btn = document.createElement("BUTTON");
         btn.setAttribute("onclick", "addWineToCart(this)");
@@ -178,7 +187,27 @@ function displayWines(filteredWines) {
         var btnText = document.createTextNode("+");
         btn.appendChild(btnText);
 
-        card.appendChild(btn);
+        btnOuterDiv.appendChild(btn);
+
+        //create image div
+        var image = document.createElement("IMG");
+        image.setAttribute("class", "cardImg");
+        image.setAttribute("src", "images/catalog/"+wine.getId()+".png");
+
+        //create price div
+        var priceDiv = document.createElement("div");
+        priceDiv.setAttribute("class", "winePrice");
+        var price = document.createTextNode("$"+wine.getPrice());
+        priceDiv.appendChild(price);
+
+
+        //add button and image to top card
+
+        cardTop.appendChild(btnOuterDiv);
+        cardTop.appendChild(priceDiv);
+        cardTop.appendChild(image);
+
+        card.appendChild(cardTop);
 
 
         var centerPanel = document.getElementById("allCards");

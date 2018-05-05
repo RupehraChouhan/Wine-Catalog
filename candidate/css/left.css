@@ -1,10 +1,10 @@
 /* TODO: Implement solution here */
 
 .panel.left {
-	/*width: 12%;*/
+	min-width: 200px;
 	float: left;
 	background-color: #5D5E57;
-	min-height: 1000px;
+	min-height: 100%;
 }
 
 .panel.left .top {

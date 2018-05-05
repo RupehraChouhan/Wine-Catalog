@@ -1,19 +1,18 @@
 /* TODO: Implement solution here */
 
 .panel.center {
-	color: red;
+	color: black;
     float: left;
     background-color: #262620;
-    width: 74%;
-    height: 100%;
-    min-height: 1000px;
-
+    width: 90%;
+    min-height: 100%;
+    display: inline-block;
 }
 
 .panel.center .card {
 
     height: 260px;
-    width: 167px;
+    width: 185px;
     background: white;
     margin: 10px;
 
@@ -25,8 +24,9 @@
 }
 
 .panel.center .card .cardImg {
-    height: inherit;
+    height: 200px;
     width: inherit;
+    position: relative;
 }
 
 .panel.center .card .cardTop .cardPlusButton {
@@ -35,8 +35,18 @@
 
 .panel.center .card .cardTop button {
     background-color: transparent;
+    border: none;
+    font-size: 25px;
+    color: lightgrey;
 }
 
 .panel.center .card .cardTop .winePrice {
-    padding-left: 115px;
+    padding-left: 125px;
+    font-size: 15px;
+    margin-top: 9px;
+    /*font-weight: 600;*/
+}
+
+#allCards .card {
+    display: inline-block;
 }
