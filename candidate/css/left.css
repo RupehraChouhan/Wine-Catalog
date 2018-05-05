@@ -1,7 +1,7 @@
 /* TODO: Implement solution here */
 
 .panel.left {
-	width: 12%;
+	/*width: 12%;*/
 	float: left;
 	background-color: #5D5E57;
 	min-height: 1000px;

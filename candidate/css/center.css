@@ -9,3 +9,34 @@
     min-height: 1000px;
 
 }
+
+.panel.center .card {
+
+    height: 260px;
+    width: 167px;
+    background: white;
+    margin: 10px;
+
+}
+
+.panel.center .card .cardTop {
+    display: inline-block;
+    width: inherit;
+}
+
+.panel.center .card .cardImg {
+    height: inherit;
+    width: inherit;
+}
+
+.panel.center .card .cardTop .cardPlusButton {
+    float: left;
+}
+
+.panel.center .card .cardTop button {
+    background-color: transparent;
+}
+
+.panel.center .card .cardTop .winePrice {
+    padding-left: 115px;
+}

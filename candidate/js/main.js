@@ -2,6 +2,8 @@
 
 var allWineObjects = [];
 var filteredWines = []; //wines that are displayed at the moment
+var shoppingCart = {};
+var total = 0;
 
 $(document).ready(function() {
     /* TODO: Implement solution here */
@@ -16,39 +18,7 @@ $(document).ready(function() {
     /* Initially display ALL the wines */
     filteredWines = allWineObjects;
     searchByName();
-//    displayWines(filteredWines);
-
-
 });
-
-
-function displayWines(filteredWines) {
-
-    /* Clear all the previous wines that are displaying */
-    document.getElementById("allWines").innerHTML = "";
-
-    console.log("filtered wines: " + filteredWines.length);
-
-    filteredWines = sortResult(filteredWines);
-
-
-    /* Create list item <li> for each wine object and add it to <ol> tag*/
-    for(i = 0; i < filteredWines.length; i++) {
-        var wine = filteredWines[i];
-
-        var wineInfo = wine.getId() + " "+ wine.getCategory() + " " + wine.getName() + " " +
-         wine.getVolume() + " " + wine.getCountry() + " " + wine.getProducer() + " " + wine.getPrice();
-
-        var listItem = document.createElement("LI");
-        listItem.setAttribute("id", wine.getId());
-
-        var node = document.createTextNode(wineInfo);
-        listItem.append(node);
-        document.getElementById("allWines").appendChild(listItem);
-    }
-
-}
-
 
 function filterWineByCategory(wineCategory) {
 
@@ -58,32 +28,27 @@ function filterWineByCategory(wineCategory) {
         filteredWines = allWineObjects;
     }
     else {
+
         /* Filter wines based on the category selected */
         filteredWines = _.filter(allWineObjects, function(wine) {
             return wine.getCategory() == wineCategoryValue;
-        }) ;
+        });
     }
 
-    //displayWines();
     searchByName();
-
 }
 
 function searchByName() {
+
     searchTextBox = document.getElementById("search");
     input = searchTextBox.value.toLowerCase();
-
-    console.log("input: " + input);
 
     var filterWinesByName = _.filter(filteredWines, function(wine) {
         return wine.getName().toLowerCase().indexOf(input) != -1;
     });
 
-    //displayWinesAfterSearch(filterWinesByName);
+    var sortedResult = sortResult(filterWinesByName);
 
-    var sortedResult = sortResult(filterWinesByName)
-
-//    displayWines(filterWinesByName);
     displayWines(sortedResult);
 }
 
@@ -125,14 +90,98 @@ function sortResult(wines) {
         });
     }
 
-    console.log("sortby: "+sortOption);
-
     if (sortOption.indexOf("Dsc") != -1) {
         console.log("dsc: " + result.length);
 
         return result.reverse();
     }
+
     return result;
+}
+
+function addWineToCart(btn) {
+
+    //key is the CatalogItem ID
+    var id = btn.id.split("btn")[0];
+
+    if (id in shoppingCart) {
+        console.log("exists");
+
+        var item = shoppingCart[id];
+        item.updateItemInfo();
+
+    }
+    else {
+        console.log("create new shopping item");
+
+        var catalogItem = Catalog[id];
+        var shoppingCartItem = new ShoppingItem(
+                        catalogItem.getName(), catalogItem.getPrice());
+
+        shoppingCart[id] = shoppingCartItem;
+
+    }
+
+    console.log(shoppingCart[id].getDescription() + " " + shoppingCart[id].getQuantity() +
+        " " + shoppingCart[id].getPrice() + " " + shoppingCart[id].getAmount());
+
+    updateTotal(id);
 
 }
 
+function updateTotal(id) {
+
+    total = total + shoppingCart[id].getPrice();
+    console.log("total: " + total);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function displayWines(filteredWines) {
+
+    /* Clear all the previous wines that are displaying */
+
+    document.getElementById("allCards").innerHTML = "";
+
+    console.log("filtered wines: " + filteredWines.length);
+
+    filteredWines = sortResult(filteredWines);
+
+    /* Create list item <li> for each wine object and add it to <ol> tag*/
+    for(i = 0; i < filteredWines.length; i++) {
+        var wine = filteredWines[i];
+
+        var wineInfo = wine.getId() + " "+ wine.getCategory() + " " + wine.getName() + " " +
+         wine.getVolume() + " " + wine.getCountry() + " " + wine.getProducer() + " " + wine.getPrice();
+
+        var card = document.createElement("div");
+        card.setAttribute("class", "card");
+        card.setAttribute("id", wine.getId());
+        card.innerHTML = wineInfo;
+
+        var btn = document.createElement("BUTTON");
+        btn.setAttribute("onclick", "addWineToCart(this)");
+        btn.setAttribute("id", wine.getId()+"btn");
+        var btnText = document.createTextNode("+");
+        btn.appendChild(btnText);
+
+        card.appendChild(btn);
+
+
+        var centerPanel = document.getElementById("allCards");
+        centerPanel.appendChild(card);
+    }
+}
