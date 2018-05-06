@@ -43,20 +43,39 @@
 	line-height: 1.35;
 }
 
+.panel.left .logoText .logoWineText {
+    font-weight: 900;
+    color: white;
+    font-size: 150%;
+}
+
+.panel.left .logoText .logoCatalogText {
+    font-weight: 700;
+}
+
+
+
 .panel.left .bottom .bottomText {
-	color: white;
+	color: #b4b4b4;
+
 	font-size: 12px;
 	line-height: 2;
 	margin-left: 15px;
     margin-right: 15px;
 }
 
+.panel.left .bottom .bottomText h2 {
+    font-weight: 900;
+}
+
 input {
 	width: -webkit-fill-available;
+    border-radius: 3px;
 }
 
 select {
     width: -webkit-fill-available;
+    border-radius: 3px;
 }
 
 .panel.left .bottom .bottomText li {
@@ -70,4 +89,5 @@ select {
 .panel.left .bottom .bottomText li.active {
     background-color: #42B7C8;
 }
+
 

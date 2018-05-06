@@ -42,8 +42,8 @@
                     </div>
 
                     <div class="logoText">
-                        <h1 style="font-weight: 900;color: white; font-size: 150%;">WINE</h1>
-                        <h1 style="font-weight: 700;">C A T A L O G</h1>
+                        <h1 class="logoWineText">WINE</h1>
+                        <h1 class="logoCatalogText">C A T A L O G</h1>
                     </div>
                 </div>
 
@@ -51,6 +51,9 @@
                     <div class="bottomText">
                         <h2>SEARCH</h2>
                         <input type="text" id="search" onkeyup="searchByName()" placeholder="Start typing a wine name...">
+
+                        <br/>
+                        <br/>
 
                         <h2>SORT BY</h2>
                         <select id="selectBox" onchange="searchByName()">
@@ -67,6 +70,9 @@
                             <option value="producerAsc">Producer ↑</option>
                             <option value="producerDsc">Producer ↓</option>
                         </select>
+
+                        <br/>
+                        <br/>
 
                         <h2>CATEGORY</h2>
                         <ul class="left_panel_list">

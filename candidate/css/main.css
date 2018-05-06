@@ -5,8 +5,8 @@ html {
     color: #b4b4b4;
 
     /*my addition*/
-    overflow: scroll;
-    min-height: 1000px;
+    overflow-y: scroll;
+    /*min-height: 1200px;*/
 }
 /* TODO: Implement solution here */
 
