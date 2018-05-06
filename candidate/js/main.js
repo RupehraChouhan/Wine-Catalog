@@ -141,20 +141,6 @@ function updateTotal(id) {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function displayWines(filteredWines) {
 
     /* Clear all the previous wines that are displaying */
@@ -215,9 +201,64 @@ function displayWines(filteredWines) {
         var cardBottom = document.createElement("div");
         cardBottom.setAttribute("class", "cardBottom");
 
-        var cardBottomName = document.createTextNode(wine.getName());
-        cardBottom.appendChild(cardBottomName);
+        var cardBottomText = document.createElement("div");
+        cardBottomText.setAttribute("class", "cardBottomText");
 
+        var name = document.createElement("div");
+        name.appendChild(document.createTextNode(wine.getName()));
+
+        cardBottomText.appendChild(name);
+
+        cardBottomText.appendChild(document.createElement("br"));
+        cardBottomText.appendChild(document.createElement("br"));
+        cardBottomText.appendChild(document.createElement("hr"));
+
+        var categoryHeading = document.createElement("div");
+        categoryHeading.setAttribute("class", "heading");
+        categoryHeading.appendChild(document.createTextNode("Category"));
+        var category = document.createElement("div");
+        category.appendChild(document.createTextNode(wine.getCategory()));
+
+        cardBottomText.appendChild(categoryHeading);
+        cardBottomText.appendChild(category);
+
+        var volumeHeading = document.createElement("div");
+        volumeHeading.setAttribute("class", "heading");
+        volumeHeading.appendChild(document.createTextNode("Volume"));
+        var volume = document.createElement("div");
+        volume.appendChild(document.createTextNode(wine.getVolume()));
+
+        cardBottomText.appendChild(volumeHeading);
+        cardBottomText.appendChild(volume);
+
+        var priceHeading = document.createElement("div");
+        priceHeading.setAttribute("class", "heading");
+        priceHeading.appendChild(document.createTextNode("Price"));
+        var price = document.createElement("div");
+        price.appendChild(document.createTextNode(wine.getPrice()));
+
+        cardBottomText.appendChild(priceHeading);
+        cardBottomText.appendChild(price);
+
+        var countryHeading = document.createElement("div");
+        countryHeading.setAttribute("class", "heading");
+        countryHeading.appendChild(document.createTextNode("Country"));
+        var country = document.createElement("div");
+        country.appendChild(document.createTextNode(wine.getCountry()));
+
+        cardBottomText.appendChild(countryHeading);
+        cardBottomText.appendChild(country);
+
+        var producerHeading = document.createElement("div");
+        producerHeading.setAttribute("class", "heading");
+        producerHeading.appendChild(document.createTextNode("Producer"));
+        var producer = document.createElement("div");
+        producer.appendChild(document.createTextNode(wine.getProducer()));
+
+        cardBottomText.appendChild(producerHeading);
+        cardBottomText.appendChild(producer);
+
+        cardBottom.appendChild(cardBottomText);
 
         card.appendChild(cardTop);
         card.appendChild(cardMiddle);

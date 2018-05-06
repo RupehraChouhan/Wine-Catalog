@@ -16,6 +16,8 @@
     background: white;
     margin: 12px;
 
+    overflow: hidden;
+
 }
 
 .panel.center .card .cardTop {
@@ -32,11 +34,31 @@
 
 .panel.center .card .cardBottom {
     width: inherit;
-    height: 62px;
+    /*height: 62px;*/
+    height:280px;
     background-color: gray;
     opacity: 0.5;
     color: white;
+    transition: all 0.5s;
 
+}
+
+.panel.center .card .cardBottom .cardBottomText {
+    font-weight: 600;
+    color: white;
+    line-height: 1.5;
+    margin-left: 5px;
+}
+
+.panel.center .card .cardBottom .cardBottomText .heading {
+    color: black;
+
+}
+
+
+.panel.center .card .cardBottom:hover {
+
+    margin-top: -218px;
 }
 
 .panel.center .card .cardImg {
@@ -51,7 +73,7 @@
 }
 
 .panel.center .card .cardImg:hover {
-    transform: scale(1.0,1.05);
+    transform: scale(1.0,1.03);
 }
 
 .panel.center .card .cardTop .cardPlusButton {
