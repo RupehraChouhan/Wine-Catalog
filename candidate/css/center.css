@@ -52,14 +52,16 @@
     padding-top: 5px;
 }
 
+.panel.center .card .cardBottom .cardBottomText .name {
+    margin-bottom: 24px;
+}
+
 .panel.center .card .cardBottom .cardBottomText .heading {
     color: black;
 
 }
 
-
 .panel.center .card .cardBottom:hover {
-
     margin-top: -218px;
 }
 
