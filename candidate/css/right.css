@@ -5,6 +5,8 @@
 	float: left;
     display: -webkit-box;
     background-color: #262620;
+    min-height: 100%;
+
 
 }
 
@@ -20,6 +22,7 @@
 
     width: 420px;
     display: none;
+    box-shadow: 3px 0px 20px 5px black;
 }
 
 .panel.right .shoppingPanel .shoppingPanelTop {
@@ -36,39 +39,80 @@
 }
 
 
+.panel.right .shoppingPanel .blueLine {
+
+    background-color: #42B7C8;
+    width: inherit;
+    height: 3px;
+}
+
+
 .tableHeadings {
 
-    height: 43px;
+    height: 17px;
     padding-top: 23px;
     text-align: left;
-    margin-left: 10px;
+    /*margin-left: 10px;*/
 }
 
-.tableHeadings .cross {
+.shoppingPanel .cross {
     width: 25px;
+    font-style: italic;
+    font-weight: 600;
+    text-align: center;
 }
 
-.tableHeadings .qty {
+
+.shoppingPanel .cross button {
+    font-style: italic;
+    font-weight: 600;
+    text-align: center;
+    background-color: transparent;
+    color: #5D5E57;
+    border: none;
+}
+
+.shoppingPanel .qty {
     width: 45px;
+    text-align: center;
 }
 
-.tableHeadings .description {
+.shoppingPanel .description {
     width: 200px;
 }
 
-.tableHeadings .price {
+.shoppingPanel .price {
     width: 70px;
+    text-align: center;
 }
 
-.tableHeadings .amount {
+
+.shoppingPanel .amount {
     width: 70px;
+    text-align: center;
+}
+
+.shoppingPanel tr {
+
+    height: 40px;
 }
 
 
 .panel.right .shoppingPanel .shoppingPanelMiddle {
 
+    min-height: 800px;
+
+
 }
 
 .panel.right .shoppingPanel .shoppingPanelBottom {
+    width: inherit;
+}
+
+.panel.right .shoppingPanel .shoppingPanelBottom .totalSection {
+
+    background-color: #5D5E57;
+    height: 50px;
+    color: white;
 
 }

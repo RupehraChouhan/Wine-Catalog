@@ -4,12 +4,15 @@
 	min-width: 200px;
 	float: left;
 	background-color: #5D5E57;
-	min-height: 100%;
+	position: fixed;
 }
 
 .panel.left .top {
 	/*height: 10%;*/
-    min-height: 150px;
+	padding-top: 30px;
+    min-height: 136px;
+    box-shadow: 0px 0px 11px -3px black;
+
 }
 
 .panel.left .bottom {
@@ -25,7 +28,6 @@
     border-style: solid;
     margin-right: 36%;
     margin-left: 36%;
-    margin-top: 29px;
     border-color: white;
 }
 
@@ -63,6 +65,7 @@
 	margin-left: 15px;
     margin-right: 15px;
     font-weight: 600;
+    padding-top: 10px
 }
 
 .panel.left .bottom .bottomText h2 {

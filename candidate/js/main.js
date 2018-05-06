@@ -113,6 +113,17 @@ function addWineToCart(btn) {
         var item = shoppingCart[id];
         item.updateItemInfo();
 
+        var row = document.getElementById("row"+id);
+
+        $(row).find("td:nth-child(2)").html(item.getQuantity());
+        $(row).find("td:nth-child(5)").html(item.getAmount().toFixed(2));
+
+//        row = document.getElementById("totalRow");
+//        console.log("row is: " + row);
+//        $(row).find("td:nth-child(5)").html(total.toFixed(2));
+
+
+
     }
     else {
         console.log("create new shopping item");
@@ -123,12 +134,53 @@ function addWineToCart(btn) {
 
         shoppingCart[id] = shoppingCartItem;
 
+        var cart = document.getElementById("shoppingItems");
+
+        var row = document.createElement("tr");
+        row.setAttribute("id", "row"+id);
+        var crossCol = document.createElement("td");
+        crossCol.setAttribute("class", "cross");
+
+        var crossBtn = document.createElement("button");
+        crossBtn.appendChild(document.createTextNode("x"));
+        crossCol.appendChild(crossBtn);
+
+        var qtyCol = document.createElement("td");
+        qtyCol.setAttribute("class", "qty");
+        qtyCol.appendChild(document.createTextNode(shoppingCart[id].getQuantity()));
+
+        var descriptionCol = document.createElement("td");
+        descriptionCol.setAttribute("class", "description");
+        descriptionCol.appendChild(document.createTextNode(shoppingCart[id].getDescription()));
+
+        var priceCol = document.createElement("td");
+        priceCol.setAttribute("class", "price");
+        priceCol.appendChild(document.createTextNode(shoppingCart[id].getPrice()));
+
+        var amountCol = document.createElement("td");
+        amountCol.setAttribute("class", "amount")
+        amountCol.appendChild(document.createTextNode(shoppingCart[id].getAmount()));
+
+
+        row.appendChild(crossCol);
+        row.appendChild(qtyCol);
+        row.appendChild(descriptionCol);
+        row.appendChild(priceCol);
+        row.appendChild(amountCol);
+
+        cart.appendChild(row)
+
     }
+
+
+
 
     console.log(shoppingCart[id].getDescription() + " " + shoppingCart[id].getQuantity() +
         " " + shoppingCart[id].getPrice() + " " + shoppingCart[id].getAmount());
 
     updateTotal(id);
+
+    $("#row .amount").html(total.toFixed(2));
 
 }
 
@@ -291,5 +343,6 @@ function addCardElements(element) {
 function showCart(element) {
 
     $(element).parent().find(".shoppingPanel").css("display", "block");
+
 
 }

@@ -17,10 +17,4 @@ function ShoppingItem(description, price) {
         quantity =  quantity + 1 ;
         amount = quantity * price;
     }
-
-
-
-
-
-
 }
