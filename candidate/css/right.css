@@ -3,5 +3,72 @@
 .panel.right {
 	/*width: 14%;*/
 	float: left;
-	background-color: red;
+    display: -webkit-box;
+    background-color: #262620;
+
+}
+
+.panel.right .toggleButton {
+
+    margin-top: 20px;
+    background-color: #5D5E57;
+    border: none;
+    color: white;
+}
+
+.panel.right .shoppingPanel {
+
+    width: 420px;
+    display: none;
+}
+
+.panel.right .shoppingPanel .shoppingPanelTop {
+    height: 74px;
+    background-color: #5D5E57;
+    color: white;
+}
+
+.panel.right .shoppingPanel .shoppingPanelTop .shoppingPanelTopLabel {
+    font-size: 16px;
+    padding-top: 11px;
+    padding-left: 10px;
+    height: 20px;
+}
+
+
+.tableHeadings {
+
+    height: 43px;
+    padding-top: 23px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.tableHeadings .cross {
+    width: 25px;
+}
+
+.tableHeadings .qty {
+    width: 45px;
+}
+
+.tableHeadings .description {
+    width: 200px;
+}
+
+.tableHeadings .price {
+    width: 70px;
+}
+
+.tableHeadings .amount {
+    width: 70px;
+}
+
+
+.panel.right .shoppingPanel .shoppingPanelMiddle {
+
+}
+
+.panel.right .shoppingPanel .shoppingPanelBottom {
+
 }

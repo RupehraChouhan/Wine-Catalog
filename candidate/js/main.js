@@ -198,8 +198,8 @@ function displayWines(filteredWines) {
 
         var cardBottom = document.createElement("div");
         cardBottom.setAttribute("class", "cardBottom");
-        cardBottom.setAttribute("onmouseover","removeMargin(this)");
-        cardBottom.setAttribute("onmouseout", "addMargin(this)");
+        cardBottom.setAttribute("onmouseover","removeCardElements(this)");
+        cardBottom.setAttribute("onmouseout", "addCardElements(this)");
 
         var cardBottomText = document.createElement("div");
         cardBottomText.setAttribute("class", "cardBottomText");
@@ -237,7 +237,7 @@ function displayWines(filteredWines) {
         priceHeading.setAttribute("class", "heading");
         priceHeading.appendChild(document.createTextNode("Price"));
         var price = document.createElement("div");
-        price.appendChild(document.createTextNode(wine.getPrice()));
+        price.appendChild(document.createTextNode("$"+wine.getPrice()));
 
         cardBottomText.appendChild(priceHeading);
         cardBottomText.appendChild(price);
@@ -275,12 +275,21 @@ function displayWines(filteredWines) {
 }
 
 
-function removeMargin(parent) {
+function removeCardElements(element) {
+    $(element).find(".name").css("margin-bottom", "0px");
+    $(element).parent().find(".cardPlusButton").css("display", "none");
+    $(element).parent().find(".winePrice").css("display", "none");
 
-    $(parent).find(".name").css("margin-bottom", "0px");
-    console.log("remove", parent);
 }
 
-function addMargin(parent) {
-    $(parent).find(".name").css("margin-bottom", "24px")
+function addCardElements(element) {
+    $(element).find(".name").css("margin-bottom", "24px")
+    $(element).parent().find(".cardPlusButton").css("display","block");
+    $(element).parent().find(".winePrice").css("display", "block");
+}
+
+function showCart(element) {
+
+    $(element).parent().find(".shoppingPanel").css("display", "block");
+
 }
