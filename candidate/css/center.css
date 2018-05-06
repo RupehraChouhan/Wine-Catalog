@@ -10,8 +10,8 @@
 }
 
 .panel.center .card {
-
-    height: 260px;
+     vertical-align:top;
+    height: 280px;
     width: 185px;
     background: white;
     margin: 12px;
@@ -21,12 +21,30 @@
 .panel.center .card .cardTop {
     display: inline-block;
     width: inherit;
+    height: 26px;
+}
+
+.panel.center .card .cardMiddle {
+    /*display: inline-block;*/
+    width: inherit;
+    height: 200px;
+}
+
+.panel.center .card .cardBottom {
+    width: inherit;
+    height: 54px;
+    background-color: gray;
+    opacity: 0.5;
+    color: white;
+
 }
 
 .panel.center .card .cardImg {
-    height: 200px;
+    height:192px;
     width: inherit;
     position: relative;
+
+    /*margin-top: -6px;*/
 }
 
 .panel.center .card .cardTop .cardPlusButton {

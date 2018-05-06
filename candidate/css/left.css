@@ -67,7 +67,7 @@ select {
     text-decoration: none;
 }
 
-.panel.left .bottom .bottomText li:hover {
+.panel.left .bottom .bottomText li.active {
     background-color: #42B7C8;
 }
 

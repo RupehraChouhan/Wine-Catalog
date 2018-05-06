@@ -22,6 +22,11 @@ $(document).ready(function() {
 
 function filterWineByCategory(wineCategory) {
 
+
+    $(wineCategory).siblings().removeClass('active');
+    $(wineCategory).addClass('active');
+
+
     var wineCategoryValue = wineCategory.getAttribute('value');
 
     if (wineCategoryValue == "ALL") {
@@ -170,14 +175,12 @@ function displayWines(filteredWines) {
         var card = document.createElement("div");
         card.setAttribute("class", "card");
         card.setAttribute("id", wine.getId());
-        //card.innerHTML = wineInfo;
 
         //create top portion of the card
         var cardTop = document.createElement("div");
         cardTop.setAttribute("class", "cardTop");
 
         //create button
-
         var btnOuterDiv = document.createElement("div");
         btnOuterDiv.setAttribute("class", "cardPlusButton");
 
@@ -189,25 +192,36 @@ function displayWines(filteredWines) {
 
         btnOuterDiv.appendChild(btn);
 
-        //create image div
-        var image = document.createElement("IMG");
-        image.setAttribute("class", "cardImg");
-        image.setAttribute("src", "images/catalog/"+wine.getId()+".png");
-
         //create price div
         var priceDiv = document.createElement("div");
         priceDiv.setAttribute("class", "winePrice");
         var price = document.createTextNode("$"+wine.getPrice());
         priceDiv.appendChild(price);
 
-
-        //add button and image to top card
-
         cardTop.appendChild(btnOuterDiv);
         cardTop.appendChild(priceDiv);
-        cardTop.appendChild(image);
+
+        var cardMiddle = document.createElement("div");
+        cardMiddle.setAttribute("class", "cardMiddle");
+
+        //create image div
+        var image = document.createElement("IMG");
+        image.setAttribute("class", "cardImg");
+        image.setAttribute("src", "images/catalog/"+wine.getId()+".png");
+
+        //add image to middle card
+        cardMiddle.appendChild(image);
+
+        var cardBottom = document.createElement("div");
+        cardBottom.setAttribute("class", "cardBottom");
+
+        var cardBottomName = document.createTextNode(wine.getName());
+        cardBottom.appendChild(cardBottomName);
+
 
         card.appendChild(cardTop);
+        card.appendChild(cardMiddle);
+        card.appendChild(cardBottom);
 
 
         var centerPanel = document.getElementById("allCards");
