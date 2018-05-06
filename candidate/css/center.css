@@ -37,7 +37,7 @@
     /*height: 62px;*/
     height:280px;
     background-color: gray;
-    opacity: 0.5;
+    opacity: 0.75;
     color: white;
     transition: all 0.5s;
 
@@ -46,8 +46,10 @@
 .panel.center .card .cardBottom .cardBottomText {
     font-weight: 600;
     color: white;
-    line-height: 1.5;
-    margin-left: 5px;
+    line-height: 1.15;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
 }
 
 .panel.center .card .cardBottom .cardBottomText .heading {

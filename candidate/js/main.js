@@ -210,7 +210,8 @@ function displayWines(filteredWines) {
         cardBottomText.appendChild(name);
 
         cardBottomText.appendChild(document.createElement("br"));
-        cardBottomText.appendChild(document.createElement("br"));
+//        cardBottomText.appendChild(document.createElement("br"));
+//        cardBottomText.appendChild(document.createElement("br"));
         cardBottomText.appendChild(document.createElement("hr"));
 
         var categoryHeading = document.createElement("div");
@@ -221,6 +222,7 @@ function displayWines(filteredWines) {
 
         cardBottomText.appendChild(categoryHeading);
         cardBottomText.appendChild(category);
+        cardBottomText.appendChild(document.createElement("br"));
 
         var volumeHeading = document.createElement("div");
         volumeHeading.setAttribute("class", "heading");
@@ -230,6 +232,7 @@ function displayWines(filteredWines) {
 
         cardBottomText.appendChild(volumeHeading);
         cardBottomText.appendChild(volume);
+        cardBottomText.appendChild(document.createElement("br"));
 
         var priceHeading = document.createElement("div");
         priceHeading.setAttribute("class", "heading");
@@ -239,6 +242,7 @@ function displayWines(filteredWines) {
 
         cardBottomText.appendChild(priceHeading);
         cardBottomText.appendChild(price);
+        cardBottomText.appendChild(document.createElement("br"));
 
         var countryHeading = document.createElement("div");
         countryHeading.setAttribute("class", "heading");
@@ -248,6 +252,7 @@ function displayWines(filteredWines) {
 
         cardBottomText.appendChild(countryHeading);
         cardBottomText.appendChild(country);
+        cardBottomText.appendChild(document.createElement("br"));
 
         var producerHeading = document.createElement("div");
         producerHeading.setAttribute("class", "heading");
