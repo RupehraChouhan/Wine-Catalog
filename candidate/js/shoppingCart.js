@@ -111,7 +111,15 @@ function createAmountColumn(id) {
 }
 
 function showCart(element) {
-    $(element).parent().find(".shoppingPanel").css("display", "block");
+
+    var status = $(element).parent().find(".shoppingPanel").css("display");
+
+    if (status == "block") {
+        $(element).parent().find(".shoppingPanel").css("display", "none");
+    }
+    else{
+        $(element).parent().find(".shoppingPanel").css("display", "block");
+    }
 }
 
 
