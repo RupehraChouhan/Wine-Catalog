@@ -22,16 +22,14 @@ function addWineToCart(btn) {
         // create new shopping item and add it to the cart
         var catalogItem = Catalog[id];
         var shoppingCartItem = new ShoppingItem(
-                        catalogItem.getName(), catalogItem.getPrice());
+        catalogItem.getName(), catalogItem.getPrice());
 
         shoppingCart[id] = shoppingCartItem;
         addItemToCartUI(id);
-
     }
 
     updateTotal(id);
     updateTotalAmountInUI();
-
 }
 
 function addItemToCartUI(id) {
@@ -69,9 +67,7 @@ function createCrossColumn() {
     crossBtn.setAttribute("onclick","deleteItemFromCart(this)")
     crossBtn.appendChild(document.createTextNode("x"));
     crossCol.appendChild(crossBtn);
-
     return crossCol;
-
 }
 
 function createQtyColumn(id) {
@@ -80,7 +76,6 @@ function createQtyColumn(id) {
     qtyCol.setAttribute("class", "qty");
     qtyCol.appendChild(document.createTextNode(shoppingCart[id].getQuantity()));
     return qtyCol;
-
 }
 
 function createDescriptionColumn(id) {
@@ -89,7 +84,6 @@ function createDescriptionColumn(id) {
     descriptionCol.setAttribute("class", "description");
     descriptionCol.appendChild(document.createTextNode(shoppingCart[id].getDescription()));
     return descriptionCol;
-
 }
 
 function createPriceColumn(id) {
@@ -100,14 +94,12 @@ function createPriceColumn(id) {
     return priceCol;
 }
 
-
 function createAmountColumn(id) {
 
     var amountCol = document.createElement("td");
     amountCol.setAttribute("class", "amount")
     amountCol.appendChild(document.createTextNode(shoppingCart[id].getAmount()));
     return amountCol;
-
 }
 
 function showCart(element) {
@@ -121,7 +113,6 @@ function showCart(element) {
         $(element).parent().find(".shoppingPanel").css("display", "block");
     }
 }
-
 
 function deleteItemFromCart(row) {
 
