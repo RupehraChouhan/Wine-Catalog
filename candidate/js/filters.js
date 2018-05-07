@@ -3,7 +3,6 @@
 sorting and searching of the available wines
 */
 
-
 function filterWineByCategory(wineCategory) {
 
     //jQuery to remove highlight from previously selected

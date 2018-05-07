@@ -126,10 +126,14 @@ function deleteItemFromCart(row) {
     //delete the item from shopping cart
     shoppingCart = _.omit(shoppingCart, rowId);
     $("#"+idStr).remove();
-    
+
     updateTotalAmountInUI() ;
 }
 
 function updateTotalAmountInUI() {
     $("#row .amount").html(total.toFixed(2));
+}
+
+function updateTotal(id) {
+    total = total + shoppingCart[id].getPrice();
 }

@@ -16,9 +16,7 @@
     width: 185px;
     background: white;
     margin: 12px;
-
     overflow: hidden;
-
 }
 
 .panel.center .card .cardTop {
@@ -28,14 +26,12 @@
 }
 
 .panel.center .card .cardMiddle {
-    /*display: inline-block;*/
     width: inherit;
     height: 192px;
 }
 
 .panel.center .card .cardBottom {
     width: inherit;
-    /*height: 62px;*/
     height:280px;
     background-color: gray;
     opacity: 0.75;
@@ -70,11 +66,8 @@
     height:192px;
     width: inherit;
     position: relative;
-
     transform: scale(0.85, 0.9);
     transition: all 0.5s;
-
-    /*margin-top: -6px;*/
 }
 
 .panel.center .card .cardImg:hover {
@@ -96,7 +89,6 @@
     padding-left: 125px;
     font-size: 15px;
     margin-top: 9px;
-    /*font-weight: 600;*/
 }
 
 #allCards .card {

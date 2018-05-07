@@ -8,15 +8,12 @@
 }
 
 .panel.left .top {
-	/*height: 10%;*/
 	padding-top: 30px;
     min-height: 136px;
     box-shadow: 0px 0px 11px -3px black;
-
 }
 
 .panel.left .bottom {
-	/*height: 90%; */
 	min-height: 850px;
 }
 
@@ -55,11 +52,8 @@
     font-weight: 700;
 }
 
-
-
 .panel.left .bottom .bottomText {
 	color: #b4b4b4;
-
 	font-size: 12px;
 	line-height: 2;
 	margin-left: 15px;
@@ -93,5 +87,3 @@ select {
 .panel.left .bottom .bottomText li.active {
     background-color: #42B7C8;
 }
-
-
