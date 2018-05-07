@@ -1,5 +1,13 @@
+
+/* This files contains functions that performs filtering,
+sorting and searching of the available wines
+*/
+
+
 function filterWineByCategory(wineCategory) {
 
+    //jQuery to remove highlight from previously selected
+    //list item from the left navigation
     $(wineCategory).siblings().removeClass('active');
     $(wineCategory).addClass('active');
 
@@ -16,6 +24,7 @@ function filterWineByCategory(wineCategory) {
         });
     }
 
+    //check to see if the user has tried to filter by name
     searchByName();
 }
 
@@ -28,6 +37,7 @@ function searchByName() {
         return wine.getName().toLowerCase().indexOf(input) != -1;
     });
 
+    //sort the wines just before displaying them
     var sortedResult = sortResult(filterWinesByName);
 
     displayWines(sortedResult);
@@ -71,9 +81,9 @@ function sortResult(wines) {
         });
     }
 
+    //reverse the sorting if the option selected was descending
+    //order of the type
     if (sortOption.indexOf("Dsc") != -1) {
-        console.log("dsc: " + result.length);
-
         return result.reverse();
     }
 
