@@ -142,6 +142,7 @@ function addWineToCart(btn) {
         crossCol.setAttribute("class", "cross");
 
         var crossBtn = document.createElement("button");
+        crossBtn.setAttribute("onclick","deleteItemFromCart(this)")
         crossBtn.appendChild(document.createTextNode("x"));
         crossCol.appendChild(crossBtn);
 
@@ -343,6 +344,30 @@ function addCardElements(element) {
 function showCart(element) {
 
     $(element).parent().find(".shoppingPanel").css("display", "block");
+
+}
+
+
+function deleteItemFromCart(row) {
+
+    var idStr  = $(row).parent().parent().attr("id");
+    $("#"+idStr).remove();
+    var rowIdArray = idStr.split("row");
+    console.log("delete: "+ rowIdArray[1]);
+
+    var rowId = rowIdArray[1];
+    console.log(shoppingCart[rowId].getAmount());
+
+    total = total - shoppingCart[rowId].getAmount();
+
+
+    console.log(Object.keys(shoppingCart).length);
+
+    shoppingCart = _.omit(shoppingCart, rowId);
+
+    console.log(Object.keys(shoppingCart).length);
+
+    $("#row .amount").html(total.toFixed(2));
 
 
 }
